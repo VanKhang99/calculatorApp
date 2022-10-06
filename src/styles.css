@@ -120,6 +120,7 @@ Calculator Styles
   background-color: var(--digit);
   cursor: pointer;
   transition: all 0.3s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .calculator__button--operator,
