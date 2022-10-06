@@ -102,10 +102,6 @@ Calculator Styles
   font-size: 2rem;
 }
 
-.calculator-result--previous span:last-child {
-  height: max-content;
-}
-
 .calculator-result--current {
   color: var(--white);
   font-size: 3.6rem;

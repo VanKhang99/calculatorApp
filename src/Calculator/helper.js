@@ -28,6 +28,7 @@ export const formatResult = (result) => {
   let [integer, decimal] = result.split(".");
   if (integer.includes("e")) return integer;
   if (!decimal) return integerFormatter.format(integer);
+  if (decimal.includes("0")) decimal = decimal.slice(0, decimal.indexOf("0"));
   return `${integerFormatter.format(integer)}.${decimal}`;
 };
 

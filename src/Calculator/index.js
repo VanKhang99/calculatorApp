@@ -23,7 +23,6 @@ function Calculator() {
     );
   };
 
-  console.log(typeof currentResult, currentResult);
   return (
     <main id="main">
       <div className="calculator">
