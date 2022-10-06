@@ -1,16 +1,16 @@
 export const calculate = ({ previousResult, currentResult, operatorInput }) => {
-  previousResult = Number(previousResult) * 10;
-  currentResult = Number(currentResult) * 10;
+  previousResult = Number(previousResult) * 100000000000;
+  currentResult = Number(currentResult) * 100000000000;
   if (isNaN(previousResult) || isNaN(currentResult)) return "";
 
   let resultCalculation = "";
 
   if (operatorInput === "+")
-    resultCalculation = (previousResult + currentResult) / 10;
+    resultCalculation = (previousResult + currentResult) / 100000000000;
   if (operatorInput === "-")
-    resultCalculation = (previousResult - currentResult) / 10;
+    resultCalculation = (previousResult - currentResult) / 100000000000;
   if (operatorInput === "×")
-    resultCalculation = (previousResult * currentResult) / 100;
+    resultCalculation = (previousResult * currentResult) / 10000000000000;
   if (operatorInput === "÷") resultCalculation = previousResult / currentResult;
 
   return resultCalculation.toString();
