@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --black: rgba(0, 0, 0, 0.9);
+  --white: #fff;
+  --white-dark-1: rgba(255, 255, 255, 0.8);
+
+  --operator: #f69906;
+  --operator-light: #f0c798;
+  --operator-light-2: #d4922e;
+
+  --feature: #9f9f9f;
+  --feature-light: #e2dede;
+
+  --digit: #313131;
+  --digit-light: #7d7d7d;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Quicksand", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background: linear-gradient(
+    to righT bottom,
+    var(--white-dark-1),
+    var(--operator-light-2)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+span {
+  display: inline-block;
+}
+
+/*
+=============== 
+Calculator Styles
+===============
+*/
+#main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: auto minmax(12rem, auto) repeat(5, 8rem);
+  gap: 1rem;
+  padding: 3rem;
+  border-radius: 1.6rem;
+  background-color: var(--black);
+
+  width: 100%;
+  max-width: 41rem;
+  margin: 0 2rem;
+}
+
+.calculator__title {
+  color: var(--white);
+  font-size: 1.6rem;
+  margin-left: 2px;
+}
+
+/* RESULT */
+.calculator-result {
+  grid-column: 1 / -1;
+  background-color: rgba(218, 234, 222, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 0.4rem;
+}
+
+.calculator-result--previous {
+  color: var(--white-dark-1);
+  font-size: 2rem;
+}
+
+.calculator-result--previous span:last-child {
+  height: max-content;
+}
+
+.calculator-result--current {
+  color: var(--white);
+  font-size: 3.6rem;
+}
+
+/* BUTTON */
+.calculator__button {
+  outline: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 0.4rem;
+  background-color: var(--digit);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.calculator__button--operator,
+.calculator__button--large {
+  font-size: 3.2rem;
+  background-color: var(--operator);
+}
+
+.calculator__button--large {
+  grid-column: span 2;
+}
+
+.calculator__button--feature {
+  color: var(--black);
+  background-color: var(--feature);
+}
+
+.calculator__button:hover {
+  background-color: var(--digit-light);
+}
+
+.calculator__button--operator:hover,
+.calculator__button--large:hover {
+  background-color: var(--operator-light);
+}
+
+.calculator__button--feature:hover {
+  background-color: var(--feature-light);
+}
+
+.calculator__button:active {
+  transform: scale(0.98);
+}
+
+.calculator__button--operator:focus {
+  color: var(--operator);
+  background-color: var(--white);
+  transform: scale(0.98);
+}
+
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .calculator {
+    padding: 2rem;
+  }
+
+  .calculator-result {
+    border-radius: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .calculator__button {
+    border-radius: 50%;
+  }
+
+  .calculator__button--large {
+    border-radius: 100px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 37.5%;
+  }
+}
