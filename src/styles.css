@@ -69,7 +69,7 @@ Calculator Styles
   padding: 3rem;
   border-radius: 1.6rem;
   background-color: var(--black);
-  box-shadow: -10px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.35);
 
   width: 100%;
   max-width: 41rem;
