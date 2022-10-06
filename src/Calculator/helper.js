@@ -5,8 +5,6 @@ export const calculate = ({ previousResult, currentResult, operatorInput }) => {
 
   let resultCalculation = "";
 
-  console.log(previousResult, currentResult);
-
   if (operatorInput === "+")
     resultCalculation = (previousResult + currentResult) / 10;
   if (operatorInput === "-")
@@ -24,11 +22,11 @@ export const formatResult = (result) => {
   });
   if (!result) return;
 
-  console.log(result);
   let [integer, decimal] = result.split(".");
+
   if (integer.includes("e")) return integer;
   if (!decimal) return integerFormatter.format(integer);
-  if (decimal.includes("0")) decimal = decimal.slice(0, decimal.indexOf("0"));
+
   return `${integerFormatter.format(integer)}.${decimal}`;
 };
 
